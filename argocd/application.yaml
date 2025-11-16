@@ -12,8 +12,7 @@ spec:
     kustomize:
       namePrefix: ""
       nameSuffix: ""
-      # Use the ArgoCD-specific kustomization file
-      kustomization: kustomization-argocd.yaml
+      kustomizationPath: kustomization-argocd.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: ai-data-capture
