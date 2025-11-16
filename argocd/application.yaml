@@ -9,10 +9,6 @@ spec:
     repoURL: https://github.com/demola07/ai-data-capture-kubernetes-manifests
     targetRevision: HEAD
     path: manifests
-    kustomize:
-      namePrefix: ""
-      nameSuffix: ""
-      kustomizationPath: kustomization-argocd.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: ai-data-capture
