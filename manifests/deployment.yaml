@@ -39,12 +39,12 @@ spec:
       # serviceAccountName: ai-data-capture-api-sa
       
       # Image pull secrets for private Docker Hub repository
-      imagePullSecrets:
-      - name: ai-data-capture-registry-secret
+      # imagePullSecrets:
+      # - name: ai-data-capture-registry-secret
       
       containers:
       - name: api
-        image: demola07/ai-data-capture:v1
+        image: ghcr.io/demola07/ai-data-capture-portal-api:514e64845f9b1cf5f15d132c20a0459bd3b068dc
         imagePullPolicy: Always
         
         ports:
