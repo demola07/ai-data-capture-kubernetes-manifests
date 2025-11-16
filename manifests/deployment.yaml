@@ -44,7 +44,7 @@ spec:
       
       containers:
       - name: api
-        image: ghcr.io/demola07/ai-data-capture-portal-api:main-395fe5e
+        image: ghcr.io/demola07/ai-data-capture-portal-api:main-c7fe2c7
         imagePullPolicy: Always
         
         ports:
