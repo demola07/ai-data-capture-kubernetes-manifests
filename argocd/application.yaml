@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ai-data-capture-api
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/demola07/ai-data-capture-kubernetes-manifests
+    targetRevision: HEAD
+    path: manifests
+    kustomize:
+      namePrefix: ""
+      nameSuffix: ""
+      # Use the ArgoCD-specific kustomization file
+      kustomization: kustomization-argocd.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ai-data-capture
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
+  # Ignore differences in fields that change frequently
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/replicas  # Ignore if HPA changes replicas
